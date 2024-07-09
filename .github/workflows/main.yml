@@ -97,7 +97,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         set -e
-        lunch twrp_mi8937_4_19-userdebug && make clean && mka adbd recoveryimage
+        lunch twrp_mi8937-userdebug && make clean && mka adbd recoveryimage
     - name: Set Release Properties
       run: |
         echo "BUILD_DATE=$(TZ=Asia/Manila date +%Y%m%d)" >> $GITHUB_ENV
