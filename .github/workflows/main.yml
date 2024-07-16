@@ -83,8 +83,7 @@ jobs:
       run: |
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-        git clone https://github.com/Mi-Thorium/twrp_device_xiaomi_mithorium-common.git -b android-12.1
-        repo sync -f -j10
+        git clone https://github.com/Mi-Thorium/twrp_device_xiaomi_mithorium-common -b android-12.1
         cd ${{ github.event.inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
